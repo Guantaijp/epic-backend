@@ -5,19 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Usr.destroy_all
+puts "start seed"
 
-# User.create(name: "guantai" , email: "jp@gmail.com", password: "1234")
+
+
+Usr.create(name: "guantai" , email: "jp@gmail.com", password_digest: "1234")
+
+Destnation.create(name: "Malindi", image: " xyz", location: "description", description: "travel safe", price: "1000")
+
+Book.create( phone: "1234", date: "2015", capacity:"5", usr_id: 1, destnation_id: 1)
+
+puts "end seeding"
 
 # Destination.create(name: "Malindi", image: " xyz", location: "description", description: "travel safe", price: "1000")
-# create a sample book
-# create a sample book
-# create a sample book
-destnation = Destnation.create(name: "New York City")
-usr = Usr.create(name: "John Doe", email: "john@example.com", password_digest: "password")
-book = Book.create(phone: "123-456-7890", date: "2023-04-01", capacity: 2, destnation_id: destnation.id, usr_id: usr.id)
-
-# create a new payment
-pay = Pay.create(amount: 9.99, method: "PesaPal", status: "pending", book_id: 1, usr_id: 10)
-
-
 
