@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   delete '/usrs/:id', to: 'usrs#destroy'
 
   # Destnation Routes
-  get '/destnations', to: 'destnations#index'
+  get '/', to: 'destnations#index'
   post '/destnations', to: 'destnations#create'
   get '/destnations/:id', to: 'destnations#show'
   patch '/destnations/:id', to: 'destnations#update'
