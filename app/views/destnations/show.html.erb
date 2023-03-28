@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <%= link_to 'Edit', edit_destnation_path(@destnation) %> |
 <%= link_to 'Back', destnations_path %>
+<h1><%= @destnation.name %></h1>
+<p><%= @destnation.description %></p>
+<img src="<%= @destnation.image%>">
+<p><%= @destnation.location %></p>
+<p>Price: <%= @destnation.price %></p>
+
