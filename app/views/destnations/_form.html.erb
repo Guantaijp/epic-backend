@@ -1,0 +1,17 @@
+<%= form_with(model: destnation) do |form| %>
+  <% if destnation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(destnation.errors.count, "error") %> prohibited this destnation from being saved:</h2>
+
+      <ul>
+        <% destnation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

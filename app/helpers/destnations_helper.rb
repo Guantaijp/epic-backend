@@ -1,0 +1,2 @@
+module DestnationsHelper
+end

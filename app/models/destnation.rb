@@ -1,0 +1,2 @@
+class Destnation < ApplicationRecord
+end
