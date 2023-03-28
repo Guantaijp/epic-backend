@@ -1,8 +1,11 @@
 class BooksController < ApplicationController
-  #index
-  def index 
-    book = Book.all
-    render json: book
+
+  skip_before_action :authorized, only: [:index, :create, :show]
+
+  # GET /books or /books.json
+  def index
+    @books = Book.all
+    render json: @books
   end
 
   #show

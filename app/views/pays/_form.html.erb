@@ -1,4 +1,5 @@
 <%= form_with(model: pay) do |form| %>
+<%= csrf_meta_tags %>
   <% if pay.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(pay.errors.count, "error") %> prohibited this pay from being saved:</h2>
