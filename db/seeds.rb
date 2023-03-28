@@ -9,6 +9,7 @@ Usr.destroy_all
 puts "start seed"
 
 
+
 Usr.create(name: "guantai" , email: "jp@gmail.com", password_digest: "1234")
 
 Destnation.create(name: "Malindi", image: " xyz", location: "description", description: "travel safe", price: "1000")
@@ -18,3 +19,4 @@ Book.create( phone: "1234", date: "2015", capacity:"5", usr_id: 1, destnation_id
 puts "end seeding"
 
 # Destination.create(name: "Malindi", image: " xyz", location: "description", description: "travel safe", price: "1000")
+

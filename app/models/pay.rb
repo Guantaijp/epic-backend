@@ -1,2 +1,5 @@
 class Pay < ApplicationRecord
-end
+    belongs_to :book, optional: true
+    belongs_to :usr, optional: true
+  end
+  
