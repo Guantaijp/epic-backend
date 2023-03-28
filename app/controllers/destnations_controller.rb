@@ -1,9 +1,10 @@
 class DestnationsController < ApplicationController
-  before_action :set_destnation, only: %i[ show edit update destroy ]
+  skip_before_action :authorized, only: [:index, :create]
 
   # GET /destnations or /destnations.json
   def index
     @destnations = Destnation.all
+    render json: @destnations
   end
 
   # GET /destnations/1 or /destnations/1.json

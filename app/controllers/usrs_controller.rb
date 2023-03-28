@@ -1,72 +1,57 @@
 class UsrsController < ApplicationController
-  before_action :set_usr, only: %i[ show edit update destroy ]
+  skip_before_action :authorized, only: [:index, :create]
 
-  # GET /usrs or /usrs.json
-  def index
-   usr = Usr.all
-    render json: usr
+    # GET /users
 
-  end
+    def index
+      @users = Usr.all
+      render json: @users
+    end
 
-  # GET /usrs/1 or /usrs/1.json
-  def show
-  end
+    # GET /users/1
 
-  # GET /usrs/new
-  def new
-    @usr = Usr.new
-  end
-
-  # GET /usrs/1/edit
-  def edit
-  end
-
-  # POST /usrs or /usrs.json
-  def create
-    @usr = Usr.new(usr_params)
-
-    respond_to do |format|
-      if @usr.save
-        format.html { redirect_to usr_url(@usr), notice: "Usr was successfully created." }
-        format.json { render :show, status: :created, location: @usr }
+    def show
+      @user = Usr.find(params[:id])
+      if @user
+      render json: @user
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @usr.errors, status: :unprocessable_entity }
+        render json: {error: "User not found"}, status: :not_found
       end
     end
-  end
 
-  # PATCH/PUT /usrs/1 or /usrs/1.json
-  def update
-    respond_to do |format|
-      if @usr.update(usr_params)
-        format.html { redirect_to usr_url(@usr), notice: "Usr was successfully updated." }
-        format.json { render :show, status: :ok, location: @usr }
+    # POST /users
+
+     def create
+      user = Usr.create(user_params)
+      if user.valid?
+        render json: { user: user }, status: :created
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @usr.errors, status: :unprocessable_entity }
+        render json: { error: user.errors.full_messages.join(', ') }, status: :unprocessable_entity
       end
     end
-  end
 
-  # DELETE /usrs/1 or /usrs/1.json
-  def destroy
-    @usr.destroy
-
-    respond_to do |format|
-      format.html { redirect_to usrs_url, notice: "Usr was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_usr
-      @usr = Usr.find(params[:id])
+    # PATCH/PUT /users/1
+    def update
+      if @user.update(user_params)
+        render json: @user
+      else
+        render json: @user.errors, status: :unprocessable_entity
+      end
     end
 
-    # Only allow a list of trusted parameters through.
-    def usr_params
-      params.fetch(:usr, {})
+    # DELETE /users/1
+    def destroy
+      @user.destroy
     end
+
+
+    private
+      # Use callbacks to share common setup or constraints between actions.
+      def set_user
+        @user = Usr.find(params[:id])
+      end
+      # Only allow a list of trusted parameters through.
+      def user_params
+        params.permit(:name, :email, :password)
+      end
 end

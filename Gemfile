@@ -7,6 +7,8 @@ ruby '3.0.4'
 gem 'rails', '~> 6.1.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
+
+gem 'rack-cors'
 # Use Puma as the app server
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
@@ -55,3 +57,7 @@ group :production do
       gem 'pg', '~> 1.4', '>= 1.4.6'
   end
 
+
+gem "active_model_serializers", "~> 0.10.13"
+
+gem "faker", "~> 3.1"
