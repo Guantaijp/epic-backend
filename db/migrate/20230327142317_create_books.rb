@@ -4,7 +4,6 @@ class CreateBooks < ActiveRecord::Migration[6.1]
       t.string :phone
       t.string :date
       t.string :capacity
-
       
       t.references :destnation, null: false, foreign_key: true
       t.references :usr, null: false, foreign_key: true
