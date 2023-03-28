@@ -1,4 +1,9 @@
-<p id="notice"><%= notice %></p>
+<h1>Pay <%= @pay.id %></h1>
 
-<%= link_to 'Edit', edit_pay_path(@pay) %> |
-<%= link_to 'Back', pays_path %>
+<p>Status: <%= @pay.status %></p>
+<p>Amount: <%= @pay.amount %></p>
+<p>Method: <%= @pay.method %></p>
+<p>Book ID: <%= @pay.book_id %></p>
+<p>User ID: <%= @pay.usr_id %></p>
+
+

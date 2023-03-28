@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-# User.create(name: "guantai" , email: "jp@gmail.com", password: "1234")
+Usr.destroy_all
+puts "start seed"
 
 
 Destnation.create([
@@ -17,4 +17,15 @@ Destnation.create([
 { name: "The Great Wall of China", image: "https://www.chinahighlights.com/image/2019/10/ce87edc3b194414fa28a5b5c_1024x683.jpg", location: "China", description: "The Great Wall of China is a series of fortifications that were built across the historical northern borders of ancient Chinese states and Imperial China as protection against various nomadic groups from the Eurasian Steppe.", price: "$80" },
 { name: "Statue of Liberty", image: "https://www.nps.gov/stli/learn/historyculture/images/new-torch-web.jpg", location: "New York City, USA", description: "The Statue of Liberty is a colossal neoclassical sculpture on Liberty Island in New York Harbor within New York City, in the United States.", price: "$60" }
 ])
+
+Usr.create(name: "guantai" , email: "jp@gmail.com", password_digest: "1234")
+
+Destnation.create(name: "Malindi", image: " xyz", location: "description", description: "travel safe", price: "1000")
+
+Book.create( phone: "1234", date: "2015", capacity:"5", usr_id: 1, destnation_id: 1)
+
+puts "end seeding"
+
+# Destination.create(name: "Malindi", image: " xyz", location: "description", description: "travel safe", price: "1000")
+
 

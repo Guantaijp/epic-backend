@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.4'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
+
+gem 'rack-cors'
 # Use Puma as the app server
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
@@ -54,4 +56,10 @@ group :production do
       gem 'puma', '~> 6.1', '>= 6.1.1'
       gem 'pg', '~> 1.4', '>= 1.4.6'
   end
+gem 'net-http'
 
+
+
+gem "active_model_serializers", "~> 0.10.13"
+
+gem "faker", "~> 3.1"

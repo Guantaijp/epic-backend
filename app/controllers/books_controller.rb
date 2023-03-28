@@ -1,13 +1,16 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: %i[ show edit update destroy ]
+  skip_before_action :authorized, only: [:index, :create, :show]
 
   # GET /books or /books.json
   def index
     @books = Book.all
+    render json: @books
   end
 
   # GET /books/1 or /books/1.json
   def show
+    book = Book.find(params[:id])
+    render json: book
   end
 
   # GET /books/new
