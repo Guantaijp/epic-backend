@@ -36,6 +36,6 @@ end
 
 private
   def books_params
-    params.permit(:phone, :date, :capacity, :usr_id, :destnation_id)
+    params.permit(:phone, :date, :capacity, :price, :usr_id, :destnation_id)
   end
 end

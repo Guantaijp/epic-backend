@@ -2,18 +2,11 @@ class DestnationsController < ApplicationController
 
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
-  # GET /destnations or /destnations.json
-  def index
-    destnations = Destnation.select(:id, :name, :image, :location, :description, :price)
-    render json: destnations
 
-  skip_before_action :authorized, only: [:index, :create]
-
-  # GET /destnations or /destnations.json
-  def index
-    @destnations = Destnation.all
-    render json: @destnations
-
+# GET /destnations or /destnations.json
+   def index
+   destnations = Destnation.select(:id, :name, :image, :location, :description, :price)
+   render json: destnations
   end
 
   # GET /destnations/1 or /destnations/1.json

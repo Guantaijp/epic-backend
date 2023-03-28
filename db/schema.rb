@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2023_03_27_142636) do
     t.string "phone"
     t.string "date"
     t.string "capacity"
+    t.decimal "price"
     t.integer "destnation_id", null: false
     t.integer "usr_id", null: false
     t.datetime "created_at", precision: 6, null: false
