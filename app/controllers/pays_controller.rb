@@ -2,6 +2,7 @@ require "uri"
 require "json"
 require "net/http"
 class PaysController < ApplicationController
+  skip_before_action :authorized, only: [:index, :create, :show, :update, :destroy]
 
   def index
     @pays = Pay.all
