@@ -4,7 +4,6 @@ class CreateBooks < ActiveRecord::Migration[6.1]
       t.string :phone
       t.string :date
       t.string :capacity
-
       t.decimal :price
 
       
