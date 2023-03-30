@@ -5,12 +5,12 @@ class SessionsController < ApplicationController
      user = Usr.find_by(email: params[:email])
   if user && user.authenticate(params[:password])
     token = encode_token({user_id: user.id})
-      render json: { user: user, jwt: token }, status: :accepted
+    render json: {loggedin: true, user: user, jwt: token }, status: :accepted
   else
     render json: { error: 'Invalid email or password' }, status: :unauthorized
   end
   end
-  
+
   # clear JWT token from client's storage
    def destroy
     cookies.delete(:jwt_token)
