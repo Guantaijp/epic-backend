@@ -45,7 +45,7 @@ class UsrsController < ApplicationController
     end
 
     def loggedin
-      user = Usr.find_by(id: session[:user_id] ) 
+      user = Usr.find_by(id: params[:id]) 
       if(user)
          render json: {loggedin: true, user: user}
       else
