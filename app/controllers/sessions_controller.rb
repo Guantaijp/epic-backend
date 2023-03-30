@@ -10,11 +10,13 @@ class SessionsController < ApplicationController
     render json: { error: 'Invalid email or password' }, status: :unauthorized
   end
   end
+  
   # clear JWT token from client's storage
    def destroy
     cookies.delete(:jwt_token)
     render json: { message: 'Logged out successfully' }
   end
+
   private
   def session_params
     params.permit(:email, :password)

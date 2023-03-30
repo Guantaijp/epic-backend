@@ -44,14 +44,14 @@ class UsrsController < ApplicationController
       @user.destroy
     end
 
-    def loggedin
-      user = Usr.find_by(id: params[:id]) 
-      if(!user)
-         render json: {loggedin: true, user: user}
-      else
-         render json: {loggedin: false}
-      end      
-    end
+    # def loggedin
+    #   user = Usr.find_by(id: params[:id]) 
+    #   if(user)
+    #      render json: {loggedin: true, user: user}
+    #   else
+    #      render json: {loggedin: false}
+    #   end      
+    # end
 
 
     private
