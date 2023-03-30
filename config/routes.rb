@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   post '/signup', to: "usrs#create"
   delete '/logout', to: "sessions#destroy"
 
-  get "/loggedin", to: "usrs#loggedin"
+  get "/loggedin", to: "application#logged"
+
 
 
   # Books Routes
