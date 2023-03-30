@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
 
-    attribute :price, :number, default: 0
+    attribute :price, :number
 
     belongs_to :usr
     belongs_to :destnation

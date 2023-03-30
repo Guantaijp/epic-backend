@@ -1,5 +1,5 @@
 class UsrsController < ApplicationController
-  skip_before_action :authorized, only: [:index, :create, :show, :update, :destroy]
+  skip_before_action :authorized, only: [:index, :create, :show, :update, :destroy, :loggedin]
 
     # GET /users
 
@@ -42,6 +42,15 @@ class UsrsController < ApplicationController
     # DELETE /users/1
     def destroy
       @user.destroy
+    end
+
+    def loggedin
+      user = Usr.find_by(id: session[:user_id] ) 
+      if(user)
+         render json: {loggedin: true, user: user}
+      else
+         render json: {loggedin: false}
+      end      
     end
 
 
