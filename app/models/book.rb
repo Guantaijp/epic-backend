@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
 
     
-    atttribute :price, :number
+    atttribute :price,
 
     belongs_to :usr
     belongs_to :destnation
