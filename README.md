@@ -27,5 +27,9 @@
 - https://epic-hcpr.onrender.com/usrs to create a user
 - https://epic-hcpr.onrender.com/books to create a book
 
+### Frontend Repo Link
+- https://github.com/Francieorwa/epictours-frontend
+
+
 ## Live Demo
 - https://epictours-frontend.vercel.app/
